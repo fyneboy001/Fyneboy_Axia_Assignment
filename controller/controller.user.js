@@ -31,7 +31,7 @@ const userLogin = async (req, res) => {
 
   //Check if email and password exist
   if (!email || !password) {
-    return res.json({ message: "Account does not exist" });
+    return res.json({ message: "provide valid information" });
   }
 
   //check for user existence
