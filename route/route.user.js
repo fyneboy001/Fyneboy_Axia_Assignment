@@ -8,7 +8,7 @@ const {
 
 //CRUD Operator
 route.post("/user", createUser);
-route.post("/user", userLogin);
-route.delete("/user/:id", deleteUser);
+route.get("/user", userLogin);
+route.delete("/user", deleteUser);
 
 module.exports = route;

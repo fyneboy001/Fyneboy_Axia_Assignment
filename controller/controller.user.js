@@ -30,7 +30,7 @@ const userLogin = async (req, res) => {
   const { email, password } = req.body;
 
   //Check if email and password exist
-  if (!email || password) {
+  if (!email || !password) {
     return res.json({ message: "Account does not exist" });
   }
 
@@ -50,7 +50,7 @@ const userLogin = async (req, res) => {
 
 //Delete Account function
 const deleteUser = async (req, res) => {
-  const { id } = req.params.id;
+  const { id } = req.body;
   try {
     const user = await userModel.findByIdAndDelete(id);
     res.send("Account Deleted Successfully");
