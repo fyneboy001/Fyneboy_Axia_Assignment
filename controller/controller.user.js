@@ -15,7 +15,7 @@ const createUser = async (req, res) => {
   if (checkUserEmail) {
     return res.json("message: user already exist");
   }
-  //Creating user login
+  //Creating the part of the create user function that will save the user information hence creating the user account
   try {
     const newUser = new userModel({ password: hashPassword, ...others });
     await newUser.save();
@@ -45,7 +45,7 @@ const userLogin = async (req, res) => {
   if (!checkPassword) {
     return res.json({ message: "Invalid password" });
   }
-  return res.json(checkUser);
+  return res.json(userLogin);
 };
 
 //Delete Account function
